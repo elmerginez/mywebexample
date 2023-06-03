@@ -1,0 +1,105 @@
+/* Estilos generales */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+nav {
+  background-color: #333;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: right;
+}
+
+li {
+  margin-right: 1rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: rgb(0, 183, 255);
+}
+
+/* Estilos para productos */
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.producto {
+  width: calc(33.33% - 1rem);
+  margin-bottom: 2rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  padding: 1rem;
+  text-align: center;
+}
+
+.producto img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.producto h2 {
+  margin-bottom: 1rem;
+}
+
+.producto p {
+  margin-bottom: 1rem;
+}
+
+.producto button{
+  background-image: linear-gradient(to right, #ff9800, #f44336);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.producto button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .producto {
+        width: calc(50% - 1rem);
+        margin-bottom: 2rem;
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        padding: 1rem;
+        text-align: center;
+    }
+}
