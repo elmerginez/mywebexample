@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Game</title>
+    <style>
+        .container {
+            margin: auto;
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            background-color: #f7f7f7;
+            overflow: hidden;
+            border: #222 solid 1px;
+        }
+        #player {
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            transition: transform 0.2s;
+        }
+
+        #obstacle {
+            position: absolute;
+            bottom: 0;
+            right: 50px;
+            width: 30px;
+            height: 60px;
+            background-color: #333;
+            animation: obstacleMove 2s linear infinite;
+        }
+
+        @keyframes obstacleMove {
+            0% {
+                right: -30px;
+            }
+            100% {
+                right: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="player"></div>
+        <div id="obstacle"></div>
+    </div>
+
+    <script>
+        const player = document.getElementById('player');
+        const obstacle = document.getElementById('obstacle');
+        let isJumping = false;
+
+        document.addEventListener('keydown', (event) => {
+            if (event.code === 'Space' && !isJumping) {
+                isJumping = true;
+                player.style.transform = 'translateY(-100px)';
+
+                setTimeout(() => {
+                    player.style.transform = 'translateY(0)';
+                    isJumping = false;
+                }, 500);
+            }
+        });
+
+        const obstacleInterval = setInterval(() => {
+            const containerWidth = document.querySelector('.container').offsetWidth;
+            const obstacleWidth = obstacle.offsetWidth;
+            const minDistance = 100;
+            const maxDistance = containerWidth - obstacleWidth - minDistance;
+            const randomDistance = Math.floor(Math.random() * (maxDistance - minDistance + 1) + minDistance);
+
+            obstacle.style.right = `${randomDistance}px`;
+        }, 2000);
+    </script>
+</body>
+</html>

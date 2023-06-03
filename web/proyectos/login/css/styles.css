@@ -1,0 +1,256 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* estilos generales */
+.section {
+  background-color: #080710;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* estilos de los circulos */
+.background {
+  width: 330px;
+  height: 420px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.background .shape {
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shape:first-child {
+  background: linear-gradient(#1845ad,#23a2f6);
+  left: -80px;
+  top: -80px;
+  animation: xd 15s infinite;
+}
+
+.shape:last-child {
+  background: linear-gradient(to right,#ff512f,#f09819);
+  right: -80px;
+  bottom: -80px;
+  animation: xd2 15s infinite;
+}
+@keyframes xd {
+  0%{
+    left: -80px;
+    top: -80px;
+  }
+  25%{
+    left: 280px;
+    top: -80px;
+  }
+  50%{
+    left: 280px;
+    top: 380px;
+  }
+  75%{
+    left: -80px;
+    top: 380px;
+  }
+  100%{
+    left: -80px;
+    top: -80px;
+  }
+}
+@keyframes xd2 {
+  0%{
+    right: -80px;
+    bottom: -80px;
+  }
+  25%{
+    right: 280px;
+    bottom: -80px;
+  }
+  50%{
+    right: 280px;
+    bottom: 380px;
+  }
+  75%{
+    right: -80px;
+    bottom: 380px;
+  }
+  100%{
+    right: -80px;
+    bottom: -80px;
+  }
+}
+
+/* ===================== */
+/* estilos de la tarjeta */
+.card-3d-wrap {
+  position: relative;
+  height: 520px;
+  width: 400px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 600ms ease-out;
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #080710;
+  position: absolute;
+  border-radius: 6px;
+  transform-style: preserve-3d;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.checkbox:checked~.card-3d-wrap .card-3d-wrapper {
+  transform: rotateY(180deg);
+}
+
+.center-wrap {
+  position: absolute;
+  width: 100%;
+  padding: 0 35px;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 35px) perspective(100px);
+  z-index: 20;
+  display: block;
+}
+
+/* ============== */
+/* login checkbox */
+.checkbox-wrapper-10 .tgl {
+  display: none;
+}
+
+.checkbox-wrapper-10 .tgl+.tgl-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.checkbox-wrapper-10 .tgl-flip+.tgl-btn:after,
+.checkbox-wrapper-10 .tgl-flip+.tgl-btn:before {
+  display: inline-block;
+  transition: all 0.4s ease;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  line-height: 2em;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 4px;
+}
+
+.checkbox-wrapper-10 .tgl-flip+.tgl-btn:after {
+  content: attr(data-tg-on);
+  background: #0d44db;
+  transform: rotateY(-180deg);
+}
+
+.checkbox-wrapper-10 .tgl-flip+.tgl-btn:before {
+  background: #ff7519;
+  content: attr(data-tg-off);
+}
+
+.checkbox-wrapper-10 .tgl-flip:checked+.tgl-btn:before {
+  transform: rotateY(180deg);
+}
+
+.checkbox-wrapper-10 .tgl-flip:checked+.tgl-btn:after {
+  transform: rotateY(0);
+  left: 0;
+  background: #0571b9;
+}
+
+/* ============================== */
+/* estilos del formulario general */
+form * {
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+form { 
+  width: 350px;
+  height: 450px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 25px;
+}
+
+label {
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+button {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.social {
+  margin-top: 30px;
+  display: flex;
+}
