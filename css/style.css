@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 /* Estilos generales */
 * {
     box-sizing: border-box;
@@ -9,7 +10,6 @@
 }
 
 body {
-    background-color: #151515;
     background: url(https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,13 +41,15 @@ body {
     text-transform: uppercase;
     padding: 10px;
 }
-.nav-title a{
+
+.nav-title a {
     color: #efefef !important;
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
 }
-.nav-title a:hover{
+
+.nav-title a:hover {
     color: #efefef;
     color: rgb(0, 183, 255);
     text-decoration: none;
@@ -77,14 +79,16 @@ body {
     color: #00aeff;
 }
 
-.nav>#nav-check {
+.nav>#checkbox {
     display: none;
 }
+
 /* Estilos de introduccion */
 .intro {
     margin: 25vh auto;
     color: #fafafa;
     text-align: center;
+    overflow: hidden;
 }
 
 .brand-intro {
@@ -124,30 +128,13 @@ body {
     .nav {
         padding: 0px 5px;
     }
+
     .nav>.nav-btn {
         display: inline-block;
         position: absolute;
-        right: 0px;
-        top: 0px;
-    }
-
-    .nav>.nav-btn>label {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        padding: 13px;
-    }
-
-    .nav>.nav-btn>label:hover,
-    .nav #nav-check:checked~.nav-btn>label {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-
-    .nav>.nav-btn>label>span {
-        display: block;
-        width: 25px;
-        height: 10px;
-        border-top: 2px solid #eee;
+        right: 5px;
+        top: 5px;
+        overflow: hidden;
     }
 
     .nav>.nav-links {
@@ -157,7 +144,7 @@ body {
         background-color: #151515;
         height: 0px;
         transition: all 0.3s ease-in;
-        overflow-y: hidden;
+        overflow: hidden;
         top: 50px;
         left: 0px;
         z-index: 99;
@@ -166,21 +153,82 @@ body {
     .nav>.nav-links>a {
         display: block;
         width: 100%;
+        overflow: hidden;
     }
 
-    .nav>#nav-check:not(:checked)~.nav-links {
+    .nav>#checkbox:not(:checked)~.nav-links {
         height: 0px;
     }
 
-    .nav>#nav-check:checked~.nav-links {
+    .nav>#checkbox:checked~.nav-links {
         height: calc(100vh - 50px);
-        overflow-y: auto;
+        overflow: hidden;
     }
+
+    /* hdkhsdkhkdshjksdhskdh */
     .text-slider {
         font-size: 20px;
     }
+
     .text-slider .cursor {
         height: 23px;
     }
-}
 
+    /* asjkaskaksjkasjkajskjs */
+    .toggle {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition-duration: .5s;
+    }
+
+    .bars {
+        width: 90%;
+        height: 4px;
+        background-color: #eeeeee;
+        border-radius: 4px;
+    }
+
+    #bar2 {
+        transition-duration: .8s;
+    }
+
+    #bar1,
+    #bar3 {
+        width: 70%;
+    }
+
+    #checkbox:checked+.nav-btn .toggle .bars {
+        position: absolute;
+        transition-duration: .5s;
+    }
+
+    #checkbox:checked+.nav-btn .toggle #bar2 {
+        transform: scaleX(0);
+        transition-duration: .5s;
+    }
+
+    #checkbox:checked+.nav-btn .toggle #bar1 {
+        width: 90%;
+        transform: rotate(-45deg);
+        transition-duration: .5s;
+    }
+
+    #checkbox:checked+.nav-btn .toggle #bar3 {
+        width: 90%;
+        transform: rotate(45deg);
+        transition-duration: .5s;
+    }
+
+    #checkbox:checked+.nav-btn .toggle {
+        transition-duration: .5s;
+        transform: rotate(-180deg);
+    }
+
+}
