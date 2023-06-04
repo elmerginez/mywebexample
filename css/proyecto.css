@@ -1,6 +1,4 @@
-* {
-    background-color: #151515;
-}
+
 .projects {
     margin-top: 25px;
 }
@@ -11,6 +9,8 @@
     margin: 10px;
     display: flex;
     align-items: center;
+    background-color: #1515152f;
+    backdrop-filter: blur(10px);
   }
   
   .project-info {
@@ -40,3 +40,4 @@
     transition: background-color 0.3s ease;
   }
   
+

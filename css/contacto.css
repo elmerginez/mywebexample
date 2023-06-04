@@ -5,53 +5,30 @@
     border: 1px solid #5555;
     border-radius: 10px;
     padding: 30px;
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
+    backdrop-filter: blur(10px);
+    background-color: #15151536;
 }
+
 .card-form h3 {
     color: #fff;
 }
+
 .logo {
     width: 90px;
     height: 90px;
     margin-top: -100px;
     border-radius: 50px;
 }
-  /* ESTILOS DE ICONOS DE REDES SOCIALES */
-.social-icons {
-    margin: 15px;
-}
-  
-.social-icons svg {
-    padding: 10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 25%;
-    border: 1px solid #5555;
-    background-color: #bdbdbd;
-}
-  
-.whatsapp:hover {
-    fill: rgb(18, 201, 18);
-}
-  
-.facebook:hover {
-    fill: blue;
-}
-  
-.tiktok:hover {
-    fill: black;
-}
-  
-.instagram:hover {
-    fill: rgb(255, 0, 106);
-}
+
 
 /* ESTILOS DE FORMULARIO */
 .form-control {
     position: relative;
     margin: 20px 0 40px;
 }
+
 .form-control input {
     background-color: transparent;
     border: 0;
@@ -62,17 +39,20 @@
     font-size: 1em;
     color: #fff;
 }
+
 .form-control input:focus,
 .form-control input:valid {
     outline: 0;
     border-bottom-color: rgb(0, 183, 255);
-} 
+}
+
 .form-control label {
     position: absolute;
     top: 15px;
     left: 0;
     pointer-events: none;
-} 
+}
+
 .form-control label span {
     display: inline-block;
     font-size: 18px;
@@ -80,6 +60,7 @@
     color: #fff;
     transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+
 .form-control input:focus+label span,
 .form-control input:valid+label span {
     color: rgb(0, 183, 255);
@@ -99,28 +80,34 @@ button {
     overflow: hidden;
     transition: all 0.2s;
 }
+
 button span {
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
-} 
+}
+
 button svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
-} 
+}
+
 button:hover .svg-wrapper {
     animation: fly-1 0.6s ease-in-out infinite alternate;
-} 
+}
+
 button:hover svg {
     transform: translateX(30px) rotate(45deg) scale(1.1);
 }
+
 button:hover span {
     transform: translateX(5em);
-} 
+}
+
 button:active {
     transform: scale(0.95);
-} 
+}
 
 @media screen and (max-width: 550px) {
     .card-form {
@@ -130,12 +117,128 @@ button:active {
 
 @keyframes fly-1 {
     from {
-      transform: translateY(0.1em);
+        transform: translateY(0.1em);
     }
-  
+
     to {
-      transform: translateY(-0.1em);
+        transform: translateY(-0.1em);
     }
 }
-  
-  
+
+.social {
+    margin-top: 45px;
+    display: inline-flex;
+    list-style: none;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+}
+
+.social .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.social .whatsapp:hover,
+.social .whatsapp:hover .tooltip,
+.social .whatsapp:hover .tooltip::before {
+    background: #1ff218;
+    fill: #fff;
+}
+
+.social .facebook:hover,
+.social .facebook:hover .tooltip,
+.social .facebook:hover .tooltip::before {
+    background: #1877F2;
+    fill: #fff;
+}
+
+.social .tiktok:hover,
+.social .tiktok:hover .tooltip,
+.social .tiktok:hover .tooltip::before {
+    background: #0e0e0e;
+    fill: #fff;
+}
+
+.social .instagram:hover,
+.social .instagram:hover .tooltip,
+.social .instagram:hover .tooltip::before {
+    background: #E4405F;
+    fill: #fff;
+}
+.icon a svg {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 20%;
+}
+.whatsapp a {
+    width: 100%;
+    height: 100%;
+    fill: #1ff218;
+}
+.facebook a {
+    fill: #0117db;
+    width: 100%;
+    height: 100%;
+}
+.tiktok a {
+    fill: #070707;
+    width: 100%;
+    height: 100%;
+}
+.instagram a {
+    fill: #e70087;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width:600px) {
+    .card-form {
+        margin-top: 50px;
+    }
+}
