@@ -1,14 +1,12 @@
 * {
-    background-color: #222;
+    background-color: #151515;
 }
 .projects {
-    margin-top: 55px;
+    margin-top: 25px;
 }
 .project-container {
-    background-color: #222;
     border-radius: 8px;
     border: #5555 solid 1px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 10px;
     display: flex;
