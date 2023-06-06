@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Jetbrains Mono';
+    src: url(../../resources/JetBrains-Mono-Nerd-Font-Complete.ttf) format('truetype');
+  }
+
+  .code pre code {
+    font-family: 'Jetbrains Mono', monospace;
+  }
+  .caja-code {
+    position: relative;
+}
+
+.code-copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}  
