@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesion 01</title>
+    <link rel="shortcut icon" href="../../resources/favico.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../resources/prism.css">
+    <script src="../resources/prism.js"></script>
+
+    <link rel="stylesheet" href="/css/proyecto.css">
+    <link rel="stylesheet" href="css/style.css">>
+</head>
+
+<body>
+    <div class="project-container">
+        <div class="project-info">
+            <a href="index.html" class="project-link">volver</a>
+        </div>
+    </div>
+    <div class="project-container">
+        <div class="project-info">
+            <h2>Problema propuesto 1</h2>
+            <p>Generar dos arreglos de numeros enteros de 10 elementos cada uno. <br>
+                Generar un tercer arreglo que sume los elementos de los dos arreglos anteriores</p>
+            <div class="caja-code">
+                <div class="code language-java line-numbers" id="code-container">
+                    <pre><code>
+                            // declaracion de variables
+                            int arreglo1[] = new int[10];
+                            int arreglo2[] = new int[10];
+                            int arreglo3[] = new int[10];
+                            
+                            // for para rellenar numeros al vector 'arreglo1'
+                            for (int i = 0; i < arreglo1.length; i++) {
+                                arreglo1[i] = (int) (Math.random() * 41) + 10;
+                            }
+                            
+                            // for para rellenar numeros al vector 'arreglo2'
+                            for (int i = 0; i < arreglo2.length; i++) {
+                                arreglo2[i] = (int) (Math.random() * 41) + 10;
+                            }
+                            
+                            
+                            System.out.println("Arreglo 3");
+                            // for para sumar los vectores 'arreglo1','arreglo2' y agregarlo al vector 'arreglo3'
+                            for (int i = 0; i < arreglo1.length; i++) {
+                                arreglo3[i] = arreglo1[i] + arreglo2[i];
+                                System.out.println("La suma de Arreglo1["+arreglo1[i]+"] + Arreglo2["+arreglo2[i]+"] es igual a: "+arreglo3[i]);
+                            }
+                            //fin programa
+                        </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project-container">
+        <div class="project-info">
+
+            <h2>Problema propuesto 2</h2>
+            <p>La evaluacion de un estudiante se basa en 6 notas, de las cuales se consideran solo las 4 mejores notas
+            </p>
+            <div class="caja-code">
+                <div class="code language-java line-numbers" id="code-container">
+                    <pre><code>
+                    // declaracion de variables
+                    int notas[] = {15,12,18,17,14,8};
+                    int promedio = 0;
+                    
+                    // for para ordenar el vector de mayor a menor
+                    for (int i = 0; i < notas.length-1; i++) {
+                        if (notas[i] < notas[i+1]) {
+                            int temp = notas[i];
+                            notas[i] = notas[i+1];
+                            notas[i+1] = temp;
+                        }
+                    }
+                    
+                    //for para sumar los 4 numeros del vetor
+                    for (int i = 0; i < 4; i++) {
+                        promedio += notas[i];
+                    }
+                    promedio /=4;// divide la suma
+                    
+                    // imprime el promedio
+                    System.out.println("Promedio: " + promedio);
+                    //fin programa
+                </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project-container">
+        <div class="project-info">
+            <h2>Problema propuesto 3</h2>
+            <p>Desarrollar un programa que genere un arreglo de 10 numeros enteros entre 20 y 50.<br>
+                Luego debe contar cuantos numeros son pares y cuantos son impares.</p>
+            <div class="caja-code">
+                <div class="code language-java line-numbers" id="code-container">
+                    <pre><code>
+                            // declaracion de variables
+                            int arreglo[] = new int[10];
+                            int pares = 0;
+                            int impares = 0;
+                            
+                            // for para rellenar numeros al vector
+                            for (int i = 0; i < arreglo.length; i++) {
+                                arreglo[i] = (int) (Math.random() * 31)+20;
+                                System.out.println(arreglo[i]);
+                            }
+                            
+                            //for para recorrer el vector y calcular los numeros pares e impares
+                            for (int i = 0; i < arreglo.length; i++) {
+                                if (arreglo[i]%2==0) {
+                                    pares++;
+                                } else {
+                                    impares++;
+                                }
+                            }
+                            
+                            // imprime los pares e impares
+                            System.out.println("pares: " + pares);
+                            System.out.println("impares: " + impares);
+                            //fin programa
+                        </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project-container">
+        <div class="project-info">
+
+            <h2>Problema propuesto 4</h2>
+            <p>Desarrollar un programa que permita el ingreso de "N" numeros enteros positivos.<br>
+                Luego debe encontrar la media y la mediana.</p>
+            <div class="caja-code">
+                <div class="code language-java line-numbers" id="code-container">
+                    <pre><code>
+                    // instaciacion del objeto entrada de la clase Scanner
+                    Scanner entrada = new Scanner(System.in);
+                    // declaracion de variables
+                    int numeros[] = new int[5];
+                    int mediana = 0;
+                    int media = 0;
+                    
+                    // for para pedir los numeros positivos
+                    for (int i = 0; i < numeros.length; i++) {
+                        System.out.println("Ingresa numero positivo: ");
+                        numeros[i] = entrada.nextInt();
+                    }
+                    
+                    // for para sumar los numeros del vector
+                    for (int i = 0; i < numeros.length; i++) {
+                        media += numeros[i];
+                    }
+                    media /=numeros.length;//divide la suma total del vector por el tamano del vector
+                    
+                    // ordenar el vector de menor a mayor
+                    Arrays.sort(numeros);
+                    mediana = numeros[numeros.length/2];
+                    
+                    // imprime la media y la mediana del vector
+                    System.out.println(media);
+                    System.out.println(mediana);
+                    //fin programa
+                </code></pre>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="project-container">
+        <div class="project-info">
+
+            <h2>Problema propuesto 5</h2>
+            <p>Desarrollar un programa que genere un arreglo de 15 numeros enteros entre 20 y 30, luego debe encontrar
+                la
+                moda<br>
+                El programa debe mostrar el arreglo y la moda</p>
+            <div class="caja-code">
+                <div class="code language-java line-numbers" id="code-container">
+                    <pre><code>
+                    // declaracion de variables
+                    int moda = 0;
+                    int totalRep = 0; 
+                    int[] arreglo = new int[15];
+                    
+                    // ellenar el arreglo con números aleatorios entre 20 y 30
+                    for (int i = 0; i < arreglo.length; i++) {
+                        arreglo[i] = (int) (Math.random() * 11) + 20;
+                    }
+            
+                    // for para encontrar la moda
+                    for (int i = 0; i < arreglo.length; i++) {
+                        int rep = 0;//variable local
+                        
+                        // for para calcular las repeticiones de un numero
+                        for (int j = 0; j < arreglo.length; j++) {
+                            if (arreglo[i] == arreglo[j]) {
+                                rep++;
+                            }
+                        }
+                        
+                        // si repeticion es mayor a total de repeticiones 
+                        // el nuevo valor de total de repeticiones es al de repeticion
+                        // y moda es igual al valor del numero que se repite
+                        if (rep > totalRep) {
+                            totalRep = rep;
+                            moda = arreglo[i];
+                        }
+                    }
+                    
+                    // imprimir el arreglo y la moda
+                    System.out.println("arreglo: "+Arrays.toString(arreglo));
+                    System.out.println("moda: " + moda);
+                    // fin programa
+                </code></pre>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="project-container">
+        <div class="project-info">
+
+            <h2>Problema propuesto 6</h2>
+            <p>Desarrollar un programa que genere una matriz de 4x3 de numeros aleatorios comprendidos entre 10 y
+                30.<br>
+                Luego debe calcular la suma de cada columna.<br>
+                Finalmente, el programa debe mostrar la matriz y la suma de sus columnas.</p>
+            <div class="caja-code">
+                <div class="code language-java line-numbers" id="code-container">
+                    <pre><code>
+                    // declaracion de variables
+                    int matriz[][] = new int[4][3];
+                    int suma = 0;
+                    
+                    // for para rellenar la matriz de numeros aleatorios
+                    for (int i = 0; i < matriz.length; i++) {
+                        for (int j = 0; j < matriz.length-1; j++) {
+                            matriz[i][j] = (int) (Math.random() * 21) + 10;
+                            System.out.print(matriz[i][j] + "  ");
+                        }
+                        System.out.println("");
+                    }
+                    System.out.println("----------");// para dividir los datos y la suma :D
+                    
+                    // for para sumar cada columna de la matriz
+                    for (int i = 0; i < matriz.length-1; i++) {
+                        for (int j = 0; j < matriz.length; j++) {
+                            suma += matriz[j][i];
+                        }
+                        System.out.print(suma + "  ");
+                        suma = 0;
+                    }
+                    System.out.println("");
+                    //fin programa
+                </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <h2>Problema propuesto 02</h2>
+    <div class="caja-code">
+        <div class="code language-java" id="code-container6">
+            <pre><code>
+                System.out.println("   J    A    V     V    A");
+                System.out.println("   J   A A    V   V    A A");
+                System.out.println("J  J  AAAAA    V V    AAAAA");
+                System.out.println(" JJ  A     A    V    A     A");
+            </code></pre>
+        </div>
+        <button class="code-copy-button" data-clipboard-target="#code-container6">
+            Copiar
+        </button>
+    </div> -->
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyButtons = document.querySelectorAll('.code-copy-button');
+            copyButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const target = this.dataset.clipboardTarget;
+                    const codeContainer = document.querySelector(target);
+                    const code = codeContainer.textContent.trim();
+
+                    navigator.clipboard.writeText(code).then(function() {
+                        button.classList.add('copied');
+                        button.textContent = 'Copiado';
+                        setTimeout(function() {
+                            button.classList.remove('copied');
+                            button.textContent = 'Copiar';
+                        }, 3000);
+                    }).catch(function(error) {
+                        console.error('Error al copiar el código: ', error);
+                    });
+                });
+            });
+        });
+    </script> -->
+</body>
+
+</html>

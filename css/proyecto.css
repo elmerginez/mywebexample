@@ -2,6 +2,7 @@
 .projects {
     margin-top: 25px;
 }
+
 .project-container {
     border-radius: 8px;
     border: #5555 solid 1px;
@@ -41,3 +42,23 @@
   }
   
 
+  .custom-overflow {
+    width: 300px;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #555555 #f0f0f0;
+  }
+  
+  .custom-overflow::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-overflow::-webkit-scrollbar-track {
+    background: #f0f0f0;
+  }
+  
+  .custom-overflow::-webkit-scrollbar-thumb {
+    background-color: #555555;
+  }
+  

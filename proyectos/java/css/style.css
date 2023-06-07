@@ -1,22 +1,51 @@
-@font-face {
-    font-family: 'Jetbrains Mono';
-    src: url(../../resources/JetBrains-Mono-Nerd-Font-Complete.ttf) format('truetype');
-  }
-
-  .code pre code {
-    font-family: 'Jetbrains Mono', monospace;
-  }
-  .caja-code {
-    position: relative;
+*::-webkit-scrollbar {
+  width: 8px;
 }
 
-.code-copy-button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 5px 10px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}  
+*::-webkit-scrollbar-track {
+  background: #151515;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #555555;
+  border-radius: 5px;
+}
+
+body {
+  background: url(https://img.freepik.com/free-vector/monogram-line-seamless-pattern_8830-622.jpg?w=740&t=st=1686100815~exp=1686101415~hmac=d04760f91a7bac46abafc5b175fa4ff13bf8ef6ca76cb4edbad10412c0a54c5e);
+  color: #fff;
+}
+
+.container {
+  backdrop-filter: blur(8px);
+}
+
+@font-face {
+  font-family: 'Jetbrains Mono';
+  src: url(../../resources/JetBrains-Mono-Nerd-Font-Complete.ttf) format('truetype');
+}
+
+.code pre code {
+  font-family: 'Jetbrains Mono', monospace;
+}
+
+.caja-code {
+  position: relative;
+}
+
+
+.project-info {
+  width: 100%;
+}
+@media (max-width: 600px) {
+
+  .code {
+    font-size: 15px;
+  }
+  .project-info h2 {
+    font-size: 22px;
+  }
+  .project-info p {
+    font-size: 15px;
+  }
+}

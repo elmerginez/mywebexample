@@ -8,6 +8,18 @@
     font-family: 'Nunito', sans-serif;
     /* font-family: "Audiowide",sans-serif; */
 }
+*::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #151515;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #555555;
+    border-radius: 5px;
+  }
 
 body {
     background: url(https://images.unsplash.com/photo-1607743386760-88ac62b89b8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
