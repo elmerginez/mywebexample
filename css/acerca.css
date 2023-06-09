@@ -1,0 +1,167 @@
+.card {
+    width: 470px;
+    background: #171717;
+    transition: 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    opacity: .9;
+    border-radius: 10px;
+    border: #727272 1px solid;
+    padding: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.card h2 {
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+}
+
+.card .info {
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    margin: .5em;
+}
+
+.card .img {
+    width: 5em;
+    height: 5em;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.social svg {
+    height: 25px;
+    width: 25px;
+}
+
+.social {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e7e7e7;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.social::before,
+.social::after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    transition: 0.25s linear;
+    z-index: 1;
+}
+
+.social::before {
+    content: "";
+    left: 0;
+    justify-content: flex-end;
+    background-color: #4d60b6;
+}
+
+.social::after {
+    content: "";
+    right: 0;
+    justify-content: flex-start;
+    background-color: #4453a6;
+}
+
+.social:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.social:hover span {
+    opacity: 0;
+    z-index: -3;
+}
+
+.social:hover::before {
+    opacity: 0.5;
+    transform: translateY(-100%);
+}
+
+.social:hover::after {
+    opacity: 0.5;
+    transform: translateY(100%);
+}
+
+.social span {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+    font-family: 'Fira Mono', monospace;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+}
+
+.social .social-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+    color: whitesmoke;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+    padding: 10px;
+}
+
+.social .social-link svg {
+    text-shadow: 1px 1px rgba(31, 74, 121, 0.7);
+    transform: scale(1);
+}
+
+.social .social-link:hover {
+    background-color: rgba(249, 244, 255, 0.774);
+    animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+    40% {
+        transform: scale(1.4);
+    }
+
+    60% {
+        transform: scale(0.8);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card,
+.social {
+    margin: auto;
+}
